@@ -36,6 +36,17 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
 }
+.wrap h2 {
+  margin: 10px 0;
+}
+.wrap p {
+  margin: 5px 0;
+}
+.wrap p.subtitle {
+  letter-spacing: 2px;
+  font-size: 0.8em;
+  margin: 15px 0;
+}
 .wrap .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 200px;
@@ -53,17 +64,6 @@ h1 {
 }
 .wrap .card:hover h2, .wrap .card:hover p {
   color: #ffffff;
-}
-.wrap .card h2 {
-  margin: 10px 0;
-}
-.wrap .card p {
-  margin: 5px 0;
-}
-.wrap .card p.subtitle {
-  letter-spacing: 2px;
-  font-size: 0.8em;
-  margin: 15px 0;
 }
 .wrap .sermon-details {
   width: 70%;
@@ -99,4 +99,32 @@ h1 {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #757575;
+}
+
+button.go-back {
+  background: #304e6c;
+  border: none;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+button.go-back:not(:disabled):hover {
+  background: #757575;
+  cursor: pointer;
+}
+button.go-back:disabled {
+  opacity: 0.5;
+}
+button.go-back svg {
+  fill: #ffffff;
+  width: 20px;
+  height: 20px;
 }/*# sourceMappingURL=styles.css.map */

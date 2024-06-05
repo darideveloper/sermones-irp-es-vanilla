@@ -1,6 +1,7 @@
 // nodes
 const wrap = document.querySelector(".wrap")
 const mainTitle = document.querySelector(".main-title")
+const goBackBtn = document.querySelector(".go-back")
 
 
 class SermonsApp {
@@ -152,20 +153,28 @@ class SermonsApp {
   }
 
   goBack() {
-    if (this.currentPage === 1) {
-        this.currentPage = 0
-        this.renderCategories()
-    } else if (this.currentPage === 2) {
-        this.currentPage = 1
-        this.renderSermons()
+    if (this.currentPage === 0) return
+    this.currentPage -= 1
+    this.refreshRender()
+  }
+
+  updateGoBackBtn() {
+    // Update disabled attribute
+    if (this.currentPage === 0) {
+      goBackBtn.setAttribute("disabled", "true")
+    } else {
+      goBackBtn.removeAttribute("disabled")
     }
   }
 
   refreshRender() {
 
+    // Clean and update content
     this.cleanWrap()
     this.updateMainTitle()
+    this.updateGoBackBtn()
 
+    // Render pages
     if (this.currentPage === 0) {
         this.renderCategories()
     } else if (this.currentPage === 1) {
@@ -178,3 +187,8 @@ class SermonsApp {
 
 const app = new SermonsApp(sermonsData)
 app.refreshRender()
+
+// Add event listener to go back
+goBackBtn.addEventListener("click", () => {
+  app.goBack()
+})
