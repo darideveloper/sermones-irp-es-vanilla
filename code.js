@@ -74,8 +74,9 @@ class SermonsApp {
     const categorySermons = this.data[this.currentCategory]
 
     for (const sermon of categorySermons) {
+      const sermonIndex = categorySermons.indexOf(sermon)
       wrap.innerHTML += `
-      <article class="card sermon" onClick="app.onClickSermon(${sermon})">
+      <article class="card sermon" onClick="app.onClickSermon(${sermonIndex})">
         <h2>${sermon.title}</h2>
         <p class="subtitle reading">
           ${sermon.reading}
@@ -98,6 +99,41 @@ class SermonsApp {
   // render single sermon
   renderSermon() {
     console.log("renderSermon")
+
+    let videoIframe = ''
+    if (this.currentSermon.video) {
+      videoIframe = `<iframe src="${this.currentSermon.video}" frameborder="0" ></iframe>`
+    }
+
+    let mp3Audio = ''
+    if (this.currentSermon.mp3) {
+      mp3Audio = `<audio controls>
+        <source src="${this.currentSermon.mp3}" type="audio/mp3">
+        Tu navegador no soporta el elemento <code>audio</code>.
+      </audio>`
+    }
+
+    wrap.innerHTML += `
+      <article class="sermon-details">
+        <p class="subtitle reading">
+          ${this.currentSermon.reading}
+        </p>
+        <p>
+          <strong>Fecha</strong> ${this.currentSermon.date}
+        </p>
+        <p>
+          <strong>Autor</strong> ${this.currentSermon.author}
+        </p>
+        <p>
+          <strong>Numero</strong> ${this.currentSermon.number}
+        </p>
+
+        ${videoIframe}
+        
+        ${mp3Audio}
+        
+      </article>
+    ` 
   }
 
   // Go to sermons page and save category
@@ -108,8 +144,11 @@ class SermonsApp {
   }
 
   // go to specific sermon page
-  onClickSermon() {
-    console.log("onClickSermon")  
+  onClickSermon(sermonIndex) {
+    const sermon = this.data[this.currentCategory][sermonIndex]
+    this.currentPage = 2
+    this.currentSermon = sermon
+    this.refreshRender()
   }
 
   goBack() {

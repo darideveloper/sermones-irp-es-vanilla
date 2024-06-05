@@ -62,4 +62,23 @@ h1 {
   letter-spacing: 2px;
   font-size: 0.8em;
   margin: 15px 0;
+}
+.wrap .sermon-details {
+  width: 70%;
+}
+.wrap .sermon-details audio {
+  width: 100%;
+  margin: 10px 0;
+}
+.wrap .sermon-details iframe {
+  width: 100%;
+  height: 300px;
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap .sermon-details {
+    width: 100%;
+    margin: 10px 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
