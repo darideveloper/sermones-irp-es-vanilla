@@ -1,0 +1,65 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #e8e8e8;
+}
+
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: "Didact Gothic", sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.debug {
+  border: 1px solid red !important;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 90%;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.wrap .card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  padding: 15px 35px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  border-radius: 3px;
+  width: 300px;
+}
+.wrap .card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  background-color: #304e6c;
+}
+.wrap .card:hover h2, .wrap .card:hover p {
+  color: #ffffff;
+}
+.wrap .card h2 {
+  margin: 10px 0;
+}
+.wrap .card p {
+  margin: 5px 0;
+}
+.wrap .card p.subtitle {
+  letter-spacing: 2px;
+  font-size: 0.8em;
+  margin: 15px 0;
+}/*# sourceMappingURL=styles.css.map */
