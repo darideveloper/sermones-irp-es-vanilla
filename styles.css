@@ -6,6 +6,7 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #e8e8e8;
+  background: url("./images/bg.webp") no-repeat center top fixed;
 }
 
 h1, h2, h3, h4, h5, h6, .title {
@@ -34,6 +35,7 @@ h1 {
   margin: 0 auto;
   flex-wrap: wrap;
   gap: 20px;
+  /* width */
 }
 .wrap .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -43,6 +45,7 @@ h1 {
   transition-duration: 0.5s;
   border-radius: 3px;
   width: 300px;
+  background-color: #ffffff;
 }
 .wrap .card:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -75,10 +78,26 @@ h1 {
   height: 300px;
   margin: 10px 0;
 }
-
 @media screen and (max-width: 768px) {
   .wrap .sermon-details {
     width: 100%;
     margin: 10px 0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }/*# sourceMappingURL=styles.css.map */

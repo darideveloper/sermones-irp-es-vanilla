@@ -4,7 +4,7 @@ $color-purple: #4a5a83
 $color-white: #ffffff
 $color-grey-light: #e8e8e8
 $color-grey-dark: #757575
-    
+
 html
     margin: 0
     padding: 0
@@ -12,6 +12,7 @@ html
 body
     font-family: "Open Sans", sans-serif
     background-color: $color-grey-light
+    background: url("./images/bg.webp") no-repeat center top fixed
 
 h1, h2, h3, h4, h5, h6, .title
     font-family: "Didact Gothic", sans-serif
@@ -20,7 +21,7 @@ h1, h2, h3, h4, h5, h6, .title
 p
     margin: 0
 
-h1 
+h1
     text-align: center
     margin: 40px 0
 
@@ -44,8 +45,9 @@ h1
         transition-duration: 0.5s
         border-radius: 3px
         width: 300px
+        background-color: $color-white
 
-        &:hover 
+        &:hover
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3)
             transform: scale(1.05)
             background-color: $color-dark-blue
@@ -76,8 +78,22 @@ h1
             height: 300px
             margin: 10px 0
 
-@media screen and (max-width: 768px)
-    .wrap
+    @media screen and (max-width: 768px)
         .sermon-details
             width: 100%
             margin: 10px 0
+
+    /* width */
+::-webkit-scrollbar
+    width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+    background: #f1f1f1
+
+/* Handle */
+::-webkit-scrollbar-thumb
+    background: #888
+
+    &::-webkit-scrollbar-thumb:hover
+        background: #555
